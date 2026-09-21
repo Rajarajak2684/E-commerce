@@ -1,0 +1,312 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    min-height:100vh;
+}
+
+
+
+.registration-section{
+    padding:70px 15px;
+}
+
+
+
+.registration-card{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+
+
+.form-header{
+
+    margin-bottom:35px;
+
+}
+
+.form-header i{
+
+    font-size:65px;
+
+    color:#FFD43B;
+
+    margin-bottom:18px;
+
+}
+
+.form-header h2{
+
+    color:#fff;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.form-header p{
+
+    color:#dbeafe;
+
+    font-size:15px;
+
+}
+
+
+
+.form-label{
+
+    color:#fff;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.form-label i{
+
+    color:#FFD43B;
+
+    margin-right:8px;
+
+}
+
+
+.form-control,
+.form-select{
+
+    height:52px;
+
+    border-radius:12px;
+
+    border:none;
+
+    background:rgba(255,255,255,.9);
+
+    transition:.3s;
+
+    box-shadow:none;
+
+}
+
+textarea.form-control{
+
+    height:auto;
+
+    resize:none;
+
+    padding-top:15px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border:2px solid #FFD43B;
+
+    box-shadow:0 0 12px rgba(255,212,59,.5);
+
+}
+
+
+
+.gender-box,
+.skills-box{
+
+    background:rgba(255,255,255,.10);
+
+    border-radius:12px;
+
+    padding:15px;
+
+}
+
+.form-check{
+
+    margin-right:20px;
+
+    margin-bottom:10px;
+
+}
+
+.form-check-label{
+
+    color:#fff;
+
+    font-size:15px;
+
+}
+
+.form-check-input{
+
+    cursor:pointer;
+
+}
+
+
+
+.submit-btn{
+
+    background:#FFD43B;
+
+    color:#111;
+
+    border:none;
+
+    padding:14px 35px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    transition:.4s;
+
+}
+
+.submit-btn:hover{
+
+    background:#ffc107;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(255,193,7,.45);
+
+}
+
+.reset-btn{
+
+    background:#ef4444;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px 35px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    transition:.4s;
+
+}
+
+.reset-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(220,38,38,.45);
+
+}
+
+
+
+input[type=file]{
+
+    padding:12px;
+
+}
+
+
+
+::placeholder{
+
+    color:#666;
+
+}
+
+
+
+@media(max-width:992px){
+
+.registration-card{
+
+padding:35px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.registration-card{
+
+padding:25px;
+
+}
+
+.form-header i{
+
+font-size:50px;
+
+}
+
+.form-header h2{
+
+font-size:28px;
+
+}
+
+.submit-btn,
+.reset-btn{
+
+width:100%;
+
+margin:8px 0;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.registration-section{
+
+padding:30px 10px;
+
+}
+
+.form-header h2{
+
+font-size:24px;
+
+}
+
+.form-control,
+.form-select{
+
+height:48px;
+
+}
+
+}

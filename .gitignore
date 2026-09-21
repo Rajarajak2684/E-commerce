@@ -1,0 +1,13 @@
+#python
+__pycache__/
+*.py[cod]
+*spy.class
+
+#django
+*.log
+local_settings.py
+db.sqlite3.journal
+
+#environment variable
+.env
+env/

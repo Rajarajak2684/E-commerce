@@ -1,0 +1,390 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %}Index page{% endblock title %}
+
+
+{% block content %}
+<section class="registration-section">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9 col-xl-8">
+
+                <div class="registration-card">
+
+                    <div class="form-header text-center">
+
+                        <i class="fa-solid fa-user-graduate"></i>
+
+                        <h2>Student Registration Form</h2>
+
+                        <p>Fill in your details carefully to complete your registration.</p>
+
+                    </div>
+
+                    <form>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-user"></i>
+                                    Full Name
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    placeholder="Enter Full Name"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    Email Address
+                                </label>
+
+                                <input type="email"
+                                    class="form-control"
+                                    placeholder="Enter Email Address"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-phone"></i>
+                                    Mobile Number
+                                </label>
+
+                                <input type="tel"
+                                    class="form-control"
+                                    placeholder="Enter Mobile Number"
+                                    maxlength="10"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    Date of Birth
+                                </label>
+
+                                <input type="date"
+                                    class="form-control"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label d-block">
+                                    <i class="fa-solid fa-venus-mars"></i>
+                                    Gender
+                                </label>
+
+                                <div class="gender-box">
+
+                                    <div class="form-check form-check-inline">
+
+                                        <input class="form-check-input"
+                                            type="radio"
+                                            name="gender"
+                                            required>
+
+                                        <label class="form-check-label">
+                                            Male
+                                        </label>
+
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+
+                                        <input class="form-check-input"
+                                            type="radio"
+                                            name="gender">
+
+                                        <label class="form-check-label">
+                                            Female
+                                        </label>
+
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+
+                                        <input class="form-check-input"
+                                            type="radio"
+                                            name="gender">
+
+                                        <label class="form-check-label">
+                                            Other
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-city"></i>
+                                    City
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    placeholder="Enter City"
+                                    required>
+
+                            </div>
+
+                            <div class="col-12 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Address
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    rows="4"
+                                    placeholder="Enter Full Address"
+                                    required></textarea>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                    State
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    placeholder="Enter State"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                    PIN Code
+                                </label>
+
+                                <input type="number"
+                                    class="form-control"
+                                    placeholder="Enter PIN Code"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-book-open"></i>
+                                    Course Selection
+                                </label>
+
+                                <select class="form-select" required>
+
+                                    <option value="">
+                                        Select Course
+                                    </option>
+
+                                    <option>B.Tech CSE</option>
+                                    <option>BCA</option>
+                                    <option>B.Sc IT</option>
+                                    <option>MCA</option>
+                                    <option>M.Tech</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-file-arrow-up"></i>
+                                    Upload Resume
+                                </label>
+
+                                <input type="file"
+                                    class="form-control"
+                                    accept=".pdf,.doc,.docx"
+                                    required>
+
+                            </div>
+
+                            <div class="col-12 mb-4">
+
+                                <label class="form-label d-block">
+                                    <i class="fa-solid fa-code"></i>
+                                    Skills
+                                </label>
+
+                                <div class="skills-box">
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">HTML</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">CSS</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">JavaScript</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">Bootstrap</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">React</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">Python</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-lock"></i>
+                                    Password
+                                </label>
+
+                                <input type="password"
+                                    class="form-control"
+                                    placeholder="Enter Password"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+
+                                <label class="form-label">
+                                    <i class="fa-solid fa-key"></i>
+                                    Confirm Password
+                                </label>
+
+                                <input type="password"
+                                    class="form-control"
+                                    placeholder="Confirm Password"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-12 mt-3 text-center">
+
+                                <button class="btn submit-btn me-3" type="submit">
+
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    Submit
+
+                                </button>
+
+                                <button class="btn reset-btn" type="reset">
+
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                    Reset
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/caro1.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/caro2.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/caro3.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<h5>Popular Products</h5>
+{% comment %}card section {% endcomment %}
+<div class="container d-flex p-4 gap-2" style="height:500px">
+{% for p in productdata %}
+<div class="card d-flex" style="width: 10rem;">
+ {% if p.product_image %}
+    <img src="{{ p.product_image.url }}" class="card-img-top" alt="{{ p.name }}">
+{% endif %}
+    
+  <div class="card-body">
+    <h5 class="card-title">{{p.name}}</h5>
+    <p class="card-text">{{p.desc}}</p>
+    <p class="card-text">Qty:{{p.qty}}</p>
+    <p class="card-text">Price:{{p.price}}</p>
+    <p class="d-flex gap-2" style="height:80px">
+    <a href="{% url "view_details" %}" class="btn btn-primary">View Details</a>
+    <a href="{% url 'add_to_cart' p.id %}" class="btn btn-secondary">🛒Add to cart</a>
+    </p>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock content %}
+

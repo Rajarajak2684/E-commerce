@@ -1,0 +1,683 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #f1f3f6;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #212121;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.product-navbar {
+
+    background: #2874f0;
+
+    height: 70px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.navbar-brand {
+
+    color: white !important;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.navbar-brand i {
+
+    margin-right: 8px;
+}
+
+
+.cart-link {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    padding: 9px 18px;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    border-radius: 6px;
+
+    transition: 0.2s;
+}
+
+
+.cart-link:hover {
+
+    background: white;
+
+    color: #2874f0;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.product-container {
+
+    max-width: 1150px;
+
+    margin-top: 35px;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.product-card {
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: 48% 52%;
+
+    gap: 40px;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.product-image-section {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.image-box {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    height: 430px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.image-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.3s;
+}
+
+
+.image-box img:hover {
+
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   PRODUCT INFO
+========================================= */
+
+.product-info {
+
+    padding: 10px 10px 10px 0;
+}
+
+
+.product-category {
+
+    display: inline-block;
+
+    background: #eaf2ff;
+
+    color: #2874f0;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+.product-info h1 {
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+    line-height: 1.25;
+}
+
+
+.description {
+
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   RATING
+========================================= */
+
+.rating {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.rating-box {
+
+    background: #008c45;
+
+    color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.review-text {
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price-section {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+.current-price {
+
+    font-size: 32px;
+
+    font-weight: 700;
+}
+
+
+.price-section del {
+
+    color: #888;
+
+    font-size: 17px;
+}
+
+
+.discount {
+
+    color: #008c45;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   STOCK
+========================================= */
+
+.stock {
+
+    color: #008c45;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+
+.stock i {
+
+    margin-right: 6px;
+}
+
+
+/* =========================================
+   QUANTITY
+========================================= */
+
+.quantity-section {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+
+    font-weight: 600;
+}
+
+
+.quantity-control {
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+
+.quantity-control button {
+
+    width: 42px;
+
+    height: 40px;
+
+    border: none;
+
+    background: #f5f5f5;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.quantity-control button:hover {
+
+    background: #2874f0;
+
+    color: white;
+}
+
+
+.quantity-control span {
+
+    width: 48px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-left: 1px solid #ddd;
+
+    border-right: 1px solid #ddd;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.action-buttons {
+
+    display: flex;
+
+    gap: 15px;
+}
+
+
+.add-cart-btn,
+.buy-btn {
+
+    flex: 1;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 7px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.add-cart-btn {
+
+    background: #ff9f00;
+
+    color: white;
+}
+
+
+.add-cart-btn:hover {
+
+    background: #e68a00;
+
+    transform: translateY(-1px);
+}
+
+
+.buy-btn {
+
+    background: #fb641b;
+
+    color: white;
+}
+
+
+.buy-btn:hover {
+
+    background: #e6530d;
+
+    transform: translateY(-1px);
+}
+
+
+.add-cart-btn i,
+.buy-btn i {
+
+    margin-right: 7px;
+}
+
+
+/* =========================================
+   DETAILS CARD
+========================================= */
+
+.details-card {
+
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+
+.details-card h2,
+.description-card h2 {
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #eee;
+
+    margin-bottom: 25px;
+}
+
+
+.details-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.detail-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 15px;
+
+    background: #f8f9fa;
+
+    border-radius: 7px;
+}
+
+
+.detail-item span {
+
+    color: #777;
+}
+
+
+.available {
+
+    color: #008c45;
+}
+
+
+/* =========================================
+   DESCRIPTION CARD
+========================================= */
+
+.description-card {
+
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+
+.description-card p {
+
+    color: #555;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .product-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .image-box {
+
+        max-width: 500px;
+
+        height: 400px;
+
+    }
+
+
+    .product-info {
+
+        padding: 0;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .product-navbar {
+
+        height: 60px;
+    }
+
+
+    .navbar-brand {
+
+        font-size: 21px;
+    }
+
+
+    .cart-link {
+
+        font-size: 14px;
+
+        padding: 7px 12px;
+    }
+
+
+    .product-container {
+
+        margin-top: 15px;
+
+        padding: 0 10px;
+    }
+
+
+    .product-card {
+
+        padding: 20px;
+
+        gap: 25px;
+    }
+
+
+    .image-box {
+
+        height: 300px;
+    }
+
+
+    .product-info h1 {
+
+        font-size: 25px;
+    }
+
+
+    .current-price {
+
+        font-size: 27px;
+    }
+
+
+    .action-buttons {
+
+        flex-direction: column;
+    }
+
+
+    .details-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .detail-item {
+
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+}
