@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['e-commerce-k0g3.onrender.com']
 
+CSRF_TRUSTED_ORIGINS=[
+    "https://e-commerce-k0g3.onrender.com"
+]
+
 
 # Application definition
 
