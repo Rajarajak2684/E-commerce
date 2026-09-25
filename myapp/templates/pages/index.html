@@ -379,7 +379,7 @@
     <p class="card-text">Qty:{{p.qty}}</p>
     <p class="card-text">Price:{{p.price}}</p>
     <p class="d-flex gap-2" style="height:80px">
-    <a href="{% url "view_details" %}" class="btn btn-primary">View Details</a>
+   <a href="{% url 'view_details' p.id %}" class="btn btn-primary"> View Details</a>
     <a href="{% url 'add_to_cart' p.id %}" class="btn btn-secondary">🛒Add to cart</a>
     </p>
   </div>

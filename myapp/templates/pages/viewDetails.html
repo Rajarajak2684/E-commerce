@@ -1,8 +1,5 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,327 +7,164 @@
     <title>Product Details</title>
 
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #f5f6f8;
+        }
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'styles/viewDetails.css' %}">
+        .product-card {
+            max-width: 1100px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 450px;
+            object-fit: contain;
+            border-radius: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .product-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #198754;
+        }
+
+        .product-description {
+            color: #6c757d;
+            line-height: 1.7;
+        }
+
+        .qty-value {
+            width: 70px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .buy-btn {
+            padding: 12px 35px;
+            font-size: 17px;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 767px) {
+            .product-card {
+                margin: 20px 12px;
+                padding: 20px;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .product-title {
+                font-size: 25px;
+                margin-top: 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-
-<!-- ================= NAVBAR ================= -->
-
-<nav class="navbar navbar-expand-lg product-navbar">
-
-    <div class="container">
-
-        <a class="navbar-brand" href="#">
-            <i class="bi bi-shop"></i>
-            My Store
-        </a>
-
-        <a href="{% url 'cart_items' %}" class="cart-link">
-            <i class="bi bi-cart3"></i>
-            Cart
-        </a>
-
-    </div>
-
-</nav>
-
-
-<!-- ================= MAIN ================= -->
-
-<div class="container product-container">
+<div class="container">
 
     <div class="product-card">
 
-        <!-- ================= PRODUCT IMAGE ================= -->
+        <div class="row g-5 align-items-center">
 
-        <div class="product-image-section">
+            <!-- LEFT SIDE : IMAGE -->
+            <div class="col-md-6">
 
-            <div class="image-box">
-
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800"
-                     alt="Sports Running Shoes">
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= PRODUCT DETAILS ================= -->
-
-        <div class="product-info">
-
-            <span class="product-category">
-                Sports & Fitness
-            </span>
-
-
-            <h1>
-                Sports Running Shoes
-            </h1>
-
-
-            <p class="description">
-                Premium quality running shoes designed for
-                comfortable walking, running and everyday use.
-            </p>
-
-
-            <!-- Rating -->
-
-            <div class="rating">
-
-                <span class="rating-box">
-                    4.7 ★
-                </span>
-
-                <span class="review-text">
-                    9 Reviews
-                </span>
+                {% if product.product_image %}
+                    <img src="{{ product.product_image.url }}" class="product-image" alt="{{ product.name }}">
+                {% else %}
+                    <img src="https://via.placeholder.com/600x600" class="product-image" alt="Product">
+                {% endif %}
 
             </div>
 
 
-            <!-- Price -->
+            <!-- RIGHT SIDE : DETAILS -->
+            <div class="col-md-6">
 
-            <div class="price-section">
+                <h1 class="product-title">
+                    {{ product.name }}
+                </h1>
 
-                <span class="current-price">
-                    ₹1,200
-                </span>
+                <div class="mb-3">
+                    ⭐⭐⭐⭐⭐
+                    <span class="text-muted">(125 Reviews)</span>
+                </div>
 
-                <del>
-                    ₹1,500
-                </del>
+                <div class="product-price mb-3">
+                   <strong>₹{{ product.price }}</strong>
+                </div>
 
-                <span class="discount">
-                    20% OFF
-                </span>
-
-            </div>
-
-
-            <!-- Stock -->
-
-            <div class="stock">
-
-                <i class="bi bi-check-circle-fill"></i>
-
-                In Stock
-
-            </div>
+                <p class="product-subtitle">{{ product.desc }}</p>
 
 
-            <!-- Quantity -->
+               
 
-            <div class="quantity-section">
 
-                <span>
-                    Quantity
-                </span>
+                <!-- QUANTITY -->
+                <div class="mb-4">
 
-                <div class="quantity-control">
+                    <label class="form-label fw-semibold">
+                        Quantity: <span id="qtyText">1</span>
+                    </label>
 
-                    <button type="button"
-                            onclick="decreaseQty()">
-                        −
-                    </button>
-
-                    <span id="quantity">
-                        1
-                    </span>
-
-                    <button type="button"
-                            onclick="increaseQty()">
-                        +
-                    </button>
+                    <input type="range"
+                           class="form-range"
+                           id="quantity"
+                           min="1"
+                           max="10"
+                           value="1">
 
                 </div>
 
-            </div>
 
-
-            <!-- Buttons -->
-
-            <div class="action-buttons">
-
-              <a href="{% url 'add_to_cart' p.id %}" class="btn btn-secondary">🛒Add to cart</a>
-
-
-                <button class="buy-btn"
-                        onclick="buyNow()">
-
-                    <i class="bi bi-lightning-fill"></i>
-
-                    Buy Now
-
-                </button>
+                <!-- BUY NOW -->
+                <a class="btn btn-primary buy-btn w-100" href="{% url 'add_to_cart' product_id=product.id %}">
+                    🛒 Add to Cart
+                </a>
 
             </div>
 
         </div>
-
-    </div>
-
-
-    <!-- ================= PRODUCT DETAILS ================= -->
-
-    <div class="details-card">
-
-        <h2>
-            Product Details
-        </h2>
-
-
-        <div class="details-grid">
-
-            <div class="detail-item">
-
-                <span>Product Name</span>
-
-                <strong>
-                    Sports Running Shoes
-                </strong>
-
-            </div>
-
-
-            <div class="detail-item">
-
-                <span>Category</span>
-
-                <strong>
-                    Sports & Fitness
-                </strong>
-
-            </div>
-
-
-            <div class="detail-item">
-
-                <span>Price</span>
-
-                <strong>
-                    ₹1,200
-                </strong>
-
-            </div>
-
-
-            <div class="detail-item">
-
-                <span>Availability</span>
-
-                <strong class="available">
-                    In Stock
-                </strong>
-
-            </div>
-
-
-            <div class="detail-item">
-
-                <span>Rating</span>
-
-                <strong>
-                    ⭐ 4.7 / 5
-                </strong>
-
-            </div>
-
-
-            <div class="detail-item">
-
-                <span>Delivery</span>
-
-                <strong>
-                    Available
-                </strong>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= DESCRIPTION ================= -->
-
-    <div class="description-card">
-
-        <h2>
-            Description
-        </h2>
-
-        <p>
-            These sports running shoes are designed for everyday
-            comfort and performance. The lightweight construction
-            provides excellent comfort during walking, running and
-            other physical activities.
-        </p>
 
     </div>
 
 </div>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 
-let quantity = 1;
+    const quantity = document.getElementById("quantity");
+    const qtyText = document.getElementById("qtyText");
 
-
-function increaseQty() {
-
-    quantity++;
-
-    document.getElementById("quantity").innerText = quantity;
-
-}
-
-
-function decreaseQty() {
-
-    if (quantity > 1) {
-
-        quantity--;
-
-        document.getElementById("quantity").innerText = quantity;
-
-    }
-
-}
-
-
-function addToCart() {
-
-    alert(
-        "Product added to cart!\nQuantity: " + quantity
-    );
-
-}
-
-
-function buyNow() {
-
-    alert(
-        "Proceeding to checkout...\nQuantity: " + quantity
-    );
-
-}
+    quantity.addEventListener("input", function () {
+        qtyText.textContent = this.value;
+    });
 
 </script>
-
 
 </body>
 </html>

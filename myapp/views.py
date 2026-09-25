@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from .models import *
 from django.contrib import messages
 from django.http import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Sum
 
 # Create your views here.
@@ -172,8 +173,13 @@ def cart_items(request):
     
     return render(request,'pages/cartItems.html',context) 
 
-def view_details(request):
-    return render(request,'pages/viewDetails.html') 
+def view_details(request, product_id):
+    product = get_object_or_404(products, id=product_id)
+
+    context = {
+        'product': product,
+    }
+    return render(request, 'pages/viewDetails.html', context) 
 
 
 def update_cart(request, id, action):
