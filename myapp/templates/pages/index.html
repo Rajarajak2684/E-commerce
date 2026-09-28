@@ -4,7 +4,7 @@
 
 
 {% block content %}
-<section class="registration-section">
+{% comment %} <section class="registration-section">
 
     <div class="container">
 
@@ -330,9 +330,9 @@
 
     </div>
 
-</section>
+</section> {% endcomment %}
 
-<section>
+{% comment %} <section>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -362,13 +362,13 @@
 
         </div>
     </div>
-</section>
+</section> {% endcomment %}
 
 <h5>Popular Products</h5>
 {% comment %}card section {% endcomment %}
-<div class="container d-flex p-4 gap-2" style="height:500px">
+<div class="container d-flex p-4 gap-4" style="height:500px">
 {% for p in productdata %}
-<div class="card d-flex" style="width: 10rem;">
+<div class="card d-flex" style="width: 15rem;">
  {% if p.product_image %}
     <img src="{{ p.product_image.url }}" class="card-img-top" alt="{{ p.name }}">
 {% endif %}
