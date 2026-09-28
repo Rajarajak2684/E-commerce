@@ -208,5 +208,5 @@ def update_cart(request, id, action):
     cart_item.save()
     return redirect('cart_items')
 
-def MyOrder(request):
+
     
